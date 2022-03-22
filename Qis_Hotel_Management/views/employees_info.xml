@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  to view the data in the tree view  -->
+    <record id="employee_tree_view" model="ir.ui.view">
+        <field name = "name">employee.info.form</field>
+          <field name = "model">employee.info</field>
+          <field name = "arch" type="xml">
+            <tree string="Employee">
+                      <field name ="first_name"/>
+                         <field name ="last_name"/>
+                         <field name ="phone"/>
+                        <field name ="email"/>
+                         <field name ="gender"/>
+                         <field name ="department"/>
+                         <field name ="town"/>
+                         <field name ="province"/>
+                        <field name ="country"/>
+            </tree>
+       </field>
+    </record>
+
+    <!--    viewing in form view-->
+    <record id="employee_form_view" model="ir.ui.view">
+        <field name = "name">employee.info.form</field>
+          <field name = "model">employee.info</field>
+          <field name = "arch" type="xml">
+            <form string="Employee">
+                <field name="image" widget="image" class="oe_avatar"/>
+                <div class ="oe_title">
+                    <h1>
+                        Employee Information
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name ="first_name"/>
+                         <field name ="last_name"/>
+                         <field name ="phone"/>
+                        <field name ="email"/>
+                         <field name ="gender"/>
+                    </group>
+                    <group>
+                         <field name ="department"/>
+                         <field name ="town"/>
+                         <field name ="province"/>
+                        <field name ="country"/>
+                    </group>
+                </group>
+            </form>
+       </field>
+    </record>
+    <!--entering data-->
+    <record id="action_employee" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.info</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Employee
+            </p>
+        </field>
+    </record>
+    <menuitem id="employee_root_menu"
+              name="Hotel Management"
+              web_icon="qis_hotel_management\static\images\icon.jpg"
+              action="action_employee"
+              sequence="1"/>
+    <menuitem id="employee_info_menu"
+              name="Employees"
+              parent="employee_root_menu"
+              action="action_employee"
+              sequence="2"/>
+</odoo>

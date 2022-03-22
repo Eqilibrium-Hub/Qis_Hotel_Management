@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_info_id,Access for employee.info,model_employee_info,,1,1,1,1
+access_guest_info_id,Access for guest.info,model_guest_info,,1,1,1,1
+access_partner_info_id,Access for partner.info,model_partner_info,,1,1,1,1
+access_room_info_id,Access for room.info,model_room_info,,1,1,1,1
+
+access_house_keeping_id,Access for house.keeping,model_house_keeping,,1,1,1,1
+access_hotel_bill_id,Access for hotel.bill,model_hotel_bill,,1,1,1,1
+access_guest_reviews_id,Access for guest.reviews,model_guest_reviews,,1,1,1,1
+access_reservation_info_id,Access for reservation.info,model_reservation_info,,1,1,1,1
+access_admin_info_id,Access for admin.info,model_admin_info,,1,1,1,1
+access_house_keeper_id,Access for house.keeper,model_house_keeper,,1,1,1,1
+access_security_info_id,Access for security.info,model_security_info,,1,1,1,1

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  to view the data in the tree view  -->
+    <record id="hotel_bill_tree_view" model="ir.ui.view">
+        <field name = "name">hotel.bill.info.tree</field>
+          <field name = "model">hotel.bill</field>
+          <field name = "arch" type="xml">
+            <tree string="Billing">
+                        <field name ="hotel_name"/>
+                         <field name ="address"/>
+                         <field name ="email"/>
+                        <field name ="tel"/>
+                        <field name ="first_name"/>
+                         <field name ="last_name"/>
+                         <field name ="phone"/>
+                        <field name ="email"/>
+                         <field name ="gender"/>
+                         <field name ="town"/>
+                         <field name ="province"/>
+                        <field name ="country"/>
+                        <field name ="arrival_date"/>
+                        <field name ="dep_date"/>
+                        <field name ="room_number"/>
+                        <field name ="resevartion_no"/>
+                         <field name ="price"/>
+            </tree>
+       </field>
+    </record>
+    <!--    viewing in form view-->
+    <record id="hotel_bill_form_view" model="ir.ui.view">
+        <field name = "name">hotel.bill.info.form</field>
+          <field name = "model">hotel.bill</field>
+          <field name = "arch" type="xml">
+            <form string="Hotel Bill">
+                <div class ="oe_title">
+                    <h1>
+                     Billing
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                          <field name ="hotel_name"/>
+                         <field name ="address"/>
+                         <field name ="email"/>
+                        <field name ="tel"/>
+                        <field name ="first_name"/>
+                         <field name ="last_name"/>
+                         <field name ="phone"/>
+                        <field name ="email"/>
+                         <field name ="gender"/>
+                    </group>
+                    <group>
+                         <field name ="town"/>
+                         <field name ="province"/>
+                        <field name ="country"/>
+                        <field name ="arrival_date"/>
+                        <field name ="dep_date"/>
+                        <field name ="room_number"/>
+                        <field name ="resevartion_no"/>
+                         <field name ="price"/>
+                    </group>
+                </group>
+            </form>
+       </field>
+    </record>
+    <!--entering data-->
+    <record id="action_hotel" model="ir.actions.act_window">
+        <field name="name">Hotel Bill</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.bill</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Bill
+            </p>
+        </field>
+    </record>
+   <menuitem id="hotel_info_menu"
+              name="Billing"
+              parent="employee_root_menu"
+              action="action_hotel"
+              sequence="3"/>
+</odoo>

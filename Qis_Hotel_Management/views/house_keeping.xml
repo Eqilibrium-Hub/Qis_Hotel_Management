@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  to view the data in the tree view  -->
+    <record id="house_keeping_tree_view" model="ir.ui.view">
+        <field name = "name">house.keeping.form</field>
+          <field name = "model">house.keeping</field>
+          <field name = "arch" type="xml">
+            <tree string="House Keeping">
+                      <field name ="first_name"/>
+                         <field name ="room_no"/>
+                         <field name ="phone"/>
+                         <field name ="date"/>
+                         <field name ="status"/>
+                        <field name ="room_status"/>
+            </tree>
+       </field>
+    </record>
+    <!--    viewing in form view-->
+    <record id="house_keeping_form_view" model="ir.ui.view">
+        <field name = "name">house.keeping.form</field>
+          <field name = "model">house.keeping</field>
+          <field name = "arch" type="xml">
+            <form string="House Keeping">
+                <div class ="oe_title">
+                    <h1>
+                       House Keeping Information
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name ="first_name"/>
+                         <field name ="room_no"/>
+                         <field name ="phone"/>
+                    </group>
+                    <group>
+                          <field name ="date"/>
+                         <field name ="status"/>
+                        <field name ="room_status"/>
+                    </group>
+                </group>
+            </form>
+       </field>
+    </record>
+    <!--entering data-->
+    <record id="action_house_keeping" model="ir.actions.act_window">
+        <field name="name">House Keeping</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">house.keeping</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a House Keeper
+            </p>
+        </field>
+    </record>
+    <menuitem id="house_keeping_info_menu"
+              name="House Keeper"
+              parent="employee_root_menu"
+              action="action_house_keeping"
+              sequence="5"/>
+</odoo>
